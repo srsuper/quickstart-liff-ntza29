@@ -24,6 +24,14 @@ const statusMessage = document.getElementById("statusMessage");
 const code = document.getElementById("code");
 const friendShip = document.getElementById("friendShip");
 
+async function getUserProfile() {
+  const profile = await liff.getProfile();
+  pictureUrl.src = profile.pictureUrl;
+  userId.innerHTML = "<b>userId:</b> " + profile.userId;
+  statusMessage.innerHTML = "<b>statusMessage:</b> " + profile.statusMessage;
+  displayName.innerHTML = "<b>displayName:</b> " + profile.displayName;
+}
+
 async function main() {
   // Initialize LIFF app)
   await liff.init({ liffId: "1655565233-klvEGxwM" });
@@ -38,3 +46,7 @@ async function main() {
   }
 }
 main();
+async function main() {
+  // ...
+  getUserProfile();
+}
