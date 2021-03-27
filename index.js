@@ -45,6 +45,7 @@ async function main() {
       break;
   }
 }
+
 async function main() {
   // ...
   getUserProfile();
